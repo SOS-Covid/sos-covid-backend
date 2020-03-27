@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 exports.create = (req, res) => {
-    
+
     const user = new User({
         name: req.body.name,
         email: req.body.email
@@ -17,8 +17,9 @@ exports.create = (req, res) => {
 
 exports.getByName = async (req, res) => {
     try {
-        const where = {"name": req.params.name};
-        const user = await  User.findOne(where);
+        const filter = {"name": req.params.name};
+        const user = await  User.findOne(filter
+            );
 
         if(!user){
             return next(err);
@@ -31,8 +32,8 @@ exports.getByName = async (req, res) => {
 
 exports.getById = async (req, res) => {
     try {
-        const where = {"name": req.params.name};
-        const user = await  User.findOne(where);
+        const filter = {"name": req.params.name};
+        const user = await  User.findOne(filter);
 
         if(!user){
             return next(err);
