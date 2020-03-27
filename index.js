@@ -6,6 +6,7 @@ const config = require('./config');
 
 const user = require('./routes/user');
 const responsible = require('./routes/responsible');
+const market = require('./routes/market');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/user', user);
 app.use('/responsible', responsible);
+app.use('/market', market);
 
 app.listen(config.app.port, () => {
     console.log('Server executing on port: ' + config.app.port);

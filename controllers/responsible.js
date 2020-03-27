@@ -1,24 +1,28 @@
 const Responsible = require('../models/responsible');
 
 exports.create = (req, res) => {
+    const { body } = req;
+    const { address } = body;
+
     const responsible = new Responsible({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        phone1: req.body.phone1,
-        phone2: req.body.phone2,
-        street: req.body.street,
-        number: req.body.number,
-        complement: req.body.complement,
-        district: req.body.district,
-        city: req.body.city,
-        state: req.body.state,
-        country: req.body.country,
-        postal_code: req.body.postal_code
+        first_name: body.first_name,
+        last_name: body.last_name,
+        email: body.email,
+        phone1: body.phone1,
+        phone2: body.phone2,
+        address: {
+            street: address.street,
+            number: address.number,
+            complement: address.complement,
+            district: address.district,
+            city: address.city,
+            state: address.state,
+            country: address.country,
+            postal_code: address.postal_code
+        },
     });
 
     responsible.save((err) => {
-        console.log(err);
         if (err) return next(err);
         res.send(req.body);
     });
