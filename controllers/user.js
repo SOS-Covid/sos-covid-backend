@@ -18,8 +18,7 @@ exports.create = (req, res) => {
 exports.getByName = async (req, res) => {
     try {
         const filter = {"name": req.params.name};
-        const user = await  User.findOne(filter
-            );
+        const user = await  User.findOne(filter);
 
         if(!user){
             return next(err);
