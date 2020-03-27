@@ -1,0 +1,24 @@
+{
+  "name": "sos-covid",
+  "version": "1.0.0",
+  "description": "backend do projeto sos-covid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SOS-Covid/sos-covid-backend.git"
+  },
+  "author": "lianrolim@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SOS-Covid/sos-covid-backend/issues"
+  },
+  "homepage": "https://github.com/SOS-Covid/sos-covid-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.6"
+  }
+}
