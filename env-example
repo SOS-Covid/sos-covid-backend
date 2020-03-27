@@ -1,0 +1,4 @@
+NODE_ENV=dev
+HTTP_PORT=8080
+
+DB_MONGODB_URL=mongodb://lianrolim:kq2bds@ds239703.mlab.com:39703/trincadb
