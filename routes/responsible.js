@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const responsibleController = require('../controllers/responsible');
+const controller = require('../controllers/responsible');
 
-router.post('/create', responsibleController.create);
-router.get('/getByFirstName/:first_name', responsibleController.getByFirstName);
-router.get('/getAll', responsibleController.getAll);
+router.post('/create', controller.create);
+router.get('/getByFirstName/:first_name', controller.getByFirstName);
+router.get('/getAll', controller.getAll);
 
 module.exports = router;
