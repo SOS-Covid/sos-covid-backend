@@ -7,6 +7,7 @@ module.exports = {
   app: {
     host: process.env.APP_HOST,
     port: process.env.HTTP_PORT || process.env.PORT,
+    jwtSecret: process.env.JWT_SECRET,
   },
   db: {
     mongodb: {

@@ -1,4 +1,9 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const moment = require('moment');
+
+const config = require('../config');
 
 const Schema = mongoose.Schema;
 
@@ -47,5 +52,24 @@ const User = new Schema({
     help_types: [],
     served_region: []
 });
+
+User.methods.comparePassword = function(candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+        if (err) return cb(err);
+        cb(null, isMatch);
+    });
+};
+
+User.methods.generateJwt = function() {
+    const expiresIn = moment().add('hours', 3).valueOf();
+    return jwt.sign(
+        {
+            email: this.email,
+        }, config.app.jwtSecret,
+        {
+            expiresIn,
+        },
+    );
+};
 
 module.exports = mongoose.model('User', User);
