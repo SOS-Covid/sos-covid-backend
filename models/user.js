@@ -31,6 +31,9 @@ const User = new Schema({
     value: {type: Number, required: false},
     delivery: {type: Boolean, required: false},
     group_finality: {type: String, required: false},
+    status: {type: String, required: false},
+    registred_at: {type: Date, default: Date.now},
+    last_access: {type: Date, default: Date.now},
     address: {
         street: {type: String, required: false},
         number: {type: Number, required: false},

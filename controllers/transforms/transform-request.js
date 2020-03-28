@@ -23,6 +23,9 @@ module.exports = (body) => {
     first_name: _.get(body, 'first_name', undefined),
     last_name: _.get(body, 'last_name', undefined),
     phone2: _.get(body, 'phone2', undefined),
+    status: _.get(body, 'status', undefined),
+    registred_at: _.get(body, 'registred_at', undefined),
+    last_access: _.get(body, 'last_access', undefined),
     group_finality: _.get(body, 'group_finality', undefined),
     address: {
         street: _.get(body, 'address.street', undefined),
