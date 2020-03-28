@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const { NotFound, Unauthorized, InternalServerError } = require('../errors');
+const { NotFound, Unauthorized } = require('../errors');
 
 exports.create = async (req, res, next) => {
   try {
