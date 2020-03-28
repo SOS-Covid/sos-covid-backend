@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run unit tests
+    - name: Use Node.js ${{ matrix.node-version }} - Run unit tests
       uses: actions/setup-node@v1
       run: npm install
       run: npm run test:unit
