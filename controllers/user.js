@@ -7,7 +7,8 @@ exports.create = (req, res) => {
     
     newUser.save((err) => {
         if (err) return next(err);
-        res.send(req.body);
+        body.password = undefined;
+        res.send(body);
     });
 };
 
