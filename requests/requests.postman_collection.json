@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d8aa9235-720a-4694-a655-669269eb413e",
+		"_postman_id": "f750089e-70ba-4e1f-bb89-0e713e5d1626",
 		"name": "requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -28,6 +28,33 @@
 					"path": [
 						"user",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"fernando@hotmail.com\",\n\t\"password\": \"meupassforte\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/session",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"session"
 					]
 				}
 			},
