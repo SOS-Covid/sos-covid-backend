@@ -4,29 +4,21 @@
 
 <!-- A clear and concise description of what the bug is. -->
 
-## O que está acontencendo?
+## Comportamento Atual:
 
 <!-- What actually happens with SCREENSHOT, if applicable -->
 
-## O que você esperava que acontecesse?
+## Comportamento Esperado:
 
 <!-- What you expect to happen -->
 
-## Quais os passos para reproduzir a falha?
+## Passo a passo para reprodução da falha:
 
 1. <!-- Go to '...' -->
 2. <!-- Click on '....' -->
 3. <!-- and so on... -->
 
-### Algum comentário?
-
-<!-- Add any other context about the problem here. -->
-
-### Algum log, stacktrace, ou algo que possa nos ajudar?
-
-<!-- Logs from both SERVER and BROWSER -->
-
-### Quais as suas configurações de ambiente?
+### Contexto:
 
 Informações relevantes com relação as suas configurações, que podem nos facilitar a reproduzir a falha, por exemplo:
 
@@ -34,3 +26,11 @@ Informações relevantes com relação as suas configurações, que podem nos fa
 - Versão do Browser, 
 - End-Point,
 - Etc...
+
+### Informações Adicionais
+
+<!-- Add any other context about the problem here. -->
+
+### Logs de Erro / StackTrace's:
+
+<!-- Logs from both SERVER and BROWSER -->
