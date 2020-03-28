@@ -4,8 +4,8 @@ const router = express.Router();
 const controller = require('../controllers/user');
 
 router.post('/register', controller.create);
-// router.get('/getByName/:name', controller.getByName);
-// router.get('/getAll', controller.getAll);
-// router.get('/getById', controller.getById);
+router.get('/find/organization', controller.findOrganizations);
+router.get('/find/market', controller.findMarkets);
+router.get('/find/contributor', controller.findContributors);
 
 module.exports = router;
