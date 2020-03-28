@@ -1,3 +1,4 @@
 # SOS COVID BACKEND
 
-![](https://github.com/actions/sos-covid-backend/workflows/SOS%20Covid%20Backend/badge.svg)
+[![Actions Status](https://github.com/SOS-Covid/sos-covid-backend/workflows/SOS%20Covid%20Backend/badge.svg)](https://github.com/SOS-Covid/sos-covid-backend/actions)
+
