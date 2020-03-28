@@ -15,7 +15,7 @@ const extractJwt = (request, response, next) => {
 
   jwt.verify(token, config.app.jwtSecret, (err, decoded) => {
     if (err) return next(new Unauthorized('Invalid credential'));
-    request['context']['authUser'] = decoded.email;
+    request['context']['authMail'] = decoded.email;
     next();
   });
 };

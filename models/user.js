@@ -53,15 +53,21 @@ const User = new Schema({
     served_region: []
 });
 
-User.methods.comparePassword = function(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-        if (err) return cb(err);
-        cb(null, isMatch);
-    });
+User.pre('updateOne', function(done) {
+    this._update.password = bcrypt.hashSync(this._update.password, 10);
+    done();
+});
+
+User.methods.comparePassword = function(candidatePassword) {
+    try {
+        return bcrypt.compareSync(candidatePassword, this.password);
+    } catch (error) {
+        return false;
+    }
 };
 
-User.methods.generateJwt = function() {
-    const expiresIn = moment().add('hours', 3).valueOf();
+User.methods.generateJwt = function(expiresDate) {
+    const expiresIn = expiresDate || moment().add('hours', 3).valueOf();
     return jwt.sign(
         {
             email: this.email,
