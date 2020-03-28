@@ -13,12 +13,19 @@ const User = new Schema({
     cpf_cnpj: {type: String, required: true, max: 16},
     phone1: {type: String, required: true},
     type:  {type: String, required: true},
-    password: {type: String, required: true},
     name_organization: {type: String, required: false, max: 50},
-    name_market: {type: String, required: false, max: 100},
+    social_reason: {type: String, required: false, max: 100},
+    site: {type: String, required: false},
+    instagram: {type: String, required: false},
+    facebook: {type: String, required: false},
     first_name: {type: String, required: false, max: 100},
     last_name: {type: String, required: false, max: 100},
     phone2: {type: String, required: false},
+    cpf_responsible: {type: String, required: false},
+    accepted_donate: {type: Boolean, required: false},
+    value: {type: Number, required: false},
+    delivery: {type: Boolean, required: false},
+    group_finality: {type: String, required: false},
     address: {
         street: {type: String, required: false},
         number: {type: Number, required: false},
@@ -33,9 +40,12 @@ const User = new Schema({
         name_banking: {type: String, required: false},
         agency: {type: Number, required: false},
         account_number: {type: String, required: false},
+        account_type: {type: String, required: false},
         name_favored: {type: String, required: false},
         cpf_cnpj: {type: String, required: false}
-    }
+    },
+    help_types: [],
+    served_region: []
 });
 
 module.exports = mongoose.model('User', User);
