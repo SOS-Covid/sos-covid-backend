@@ -60,3 +60,6 @@ test-report
 
 #PackageLock
 package-lock.json
+
+# Mac Files
+.DS_Store
