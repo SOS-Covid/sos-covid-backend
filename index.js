@@ -26,6 +26,16 @@ app.use('/user', user);
 app.use('/responsible', responsible);
 app.use('/market', market);
 
+app.use((req, res, next) => {
+    var err = new Error('Not Found')
+    err.status = 404;
+    next(err)
+});
+
+app.use(function ({ status, message }, req, res, next) {
+    res.status(status || 500).json({ error: message });
+});
+
 app.listen(config.app.port, () => {
     console.log('Server executing on port: ' + config.app.port);
 });

@@ -6,7 +6,7 @@ module.exports = {
   environment: process.env.NODE_ENV,
   app: {
     host: process.env.APP_HOST,
-    port: process.env.HTTP_PORT,
+    port: process.env.HTTP_PORT || process.env.PORT,
   },
   db: {
     mongodb: {
