@@ -1,5 +1,12 @@
 NODE_ENV=dev
 HTTP_PORT=8080
+APP_HOST=http://localhost:8080
 JWT_SECRET=mySecretKey
+FRONT_HOST_PWD_RECOVERY=http://localhost:8081/update-password
+
+MAIL_HOST=email.com
+MAIL_PORT=465
+MAIL_USER=user@email.com
+MAIL_PASS=123
 
 DB_MONGODB_URL=mongodb://lianrolim:kq2bds@ds239703.mlab.com:39703/trincadb

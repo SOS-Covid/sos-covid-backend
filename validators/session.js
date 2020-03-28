@@ -5,4 +5,6 @@ const createSessionSchema = joi.object({
   password: joi.string().required(),
 });
 
-module.exports = createSessionSchema;
+module.exports = {
+  createSessionSchema,
+};
