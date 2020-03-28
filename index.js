@@ -5,8 +5,6 @@ const bodyParser = require('body-parser');
 const config = require('./config');
 
 const user = require('./routes/user');
-const responsible = require('./routes/responsible');
-const market = require('./routes/market');
 
 const app = express();
 
@@ -23,8 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/user', user);
-app.use('/responsible', responsible);
-app.use('/market', market);
 
 app.use((req, res, next) => {
     var err = new Error('Not Found')
