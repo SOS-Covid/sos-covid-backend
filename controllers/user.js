@@ -1,16 +1,12 @@
 const User = require('../models/user');
+const transform = require('./transforms/transform-request');
 
 exports.create = (req, res) => {
-
-    const user = new User({
-        name: req.body.name,
-        email: req.body.email
-    });
-
-    user.save((err) => {
-        if (err) {
-            return next(err);
-        }
+    const { body } = req;
+    const newUser = transform(body);
+    
+    newUser.save((err) => {
+        if (err) return next(err);
         res.send(req.body);
     });
 };
