@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "test:unit": "jest \\.unit\\.test\\.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "mongoose": "^5.9.6"
   },
   "devDependencies": {
+    "jest": "^25.2.3",
     "nodemon": "^2.0.2"
   }
 }
