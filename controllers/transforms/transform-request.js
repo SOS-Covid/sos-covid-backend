@@ -1,7 +1,10 @@
-const User = require('../../models/user');
 const _ = require('lodash');
+const Bcrypt = require("bcryptjs");
+const User = require('../../models/user');
 
 module.exports = (body) => {
+  body.password = Bcrypt.hashSync(body.password, 10);
+
   return new User({
     email: body.email, 
     password: body.password,
