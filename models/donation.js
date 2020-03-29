@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const Donation = new Schema({
     id_donor: [String], //doador
-    id_recptor: [String], //recebedor
+    id_receptor: [String], //recebedor
     items: []
 });
 

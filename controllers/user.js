@@ -7,11 +7,12 @@ const PasswordRecovery = require('../models/password-recovery');
 const transform = require('./transforms/transform-request');
 const config = require('../config');
 const mailIntegration = require('../integrations/email');
-const { NotFound, BadRequest, InternalServerError } = require('../errors');
 
-const FILTER_ORGANIZATION = {'type': 'ORGANIZATION'};
-const FILTER_MARKET = {'type': 'MARKET'};
-const FILTER_CONTRIBUTOR = {'type': 'CONTRIBUTOR'};
+const { NotFound, InternalServerError } = require('../errors');
+const { userAccountType } = require('../enums/user');
+const FILTER_ORGANIZATION = {'type': userAccountType.ORGANIZATION };
+const FILTER_MARKET = {'type': userAccountType.MARKET };
+const FILTER_CONTRIBUTOR = {'type': userAccountType.CONTRIBUTOR };
 
 exports.create = async (req, res, next) => {
     try {
@@ -204,13 +205,9 @@ exports.validRecovery = async (req, res, next) => {
 exports.updatePassword = async (req, res, next) => {
     try {
         const { authMail } = req.context;
-        const { oldPassword, newPassword } = req.body;
+        const { newPassword } = req.body;
+
         const user = await User.findOne({ email: authMail });
-
-        const isMatch = user.comparePassword(oldPassword);
-
-        if (!isMatch) return next(new BadRequest('Password\'s don\'t match'));
-
         await user.updateOne({ password: newPassword });
 
         res.sendStatus(HttpStatus.NO_CONTENT);

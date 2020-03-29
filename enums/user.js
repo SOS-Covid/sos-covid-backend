@@ -1,0 +1,5 @@
+exports.userAccountType = {
+  ORGANIZATION: 'ORGANIZATION',
+  MARKET: 'MARKET',
+  CONTRIBUTOR: 'CONTRIBUTOR',
+};
