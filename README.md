@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/api/public/logo.svg" width="90px" float="center"/>
+  [![Actions Status](https://github.com/SOS-Covid/sos-covid-backend/workflows/SOS%20Covid%20Backend/badge.svg)](https://github.com/SOS-Covid/sos-covid-backend/actions)
 </p>
 <h1 align="center">SOS-COVID-BACKEND</h1>
 <p align="center">
@@ -20,13 +20,6 @@ Link do servidor de desenvolvimento
 </div>
 
 ## Showcase 🎯
-
-### Apps 📱
-
-- [APP COVID-19 Estatísticas](https://github.com/robsonsilv4/covid19_statistics)
-
-### Outros
-- [CLI: alertcovid19](https://github.com/renanbastos93/alertcovid19)
 
 ## Servidor de desenvolvimento 🚀
 
@@ -82,7 +75,6 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
     <td align="center"><a href="https://github.com/LianRolim"><img src="https://avatars2.githubusercontent.com/u/12739251?s=400&u=d1c9919deb71f5982ab943dcf378ad0174805c88&v=4" width="100px;" alt=""/><br /><sub><b>Lian Rolim</b></sub></a><br /><a href="https://github.com/LianRolim" title="Code">💻</a></td>
   <tr>
 </table>
-
 
 <table>
   <tr>
