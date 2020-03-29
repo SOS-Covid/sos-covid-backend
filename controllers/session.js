@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const User = require('../models/user');
 const { NotFound, Unauthorized } = require('../errors');
 
@@ -10,6 +12,8 @@ exports.create = async (req, res, next) => {
 
     const isMatch = user.comparePassword(password);
     if (!isMatch) return next(new Unauthorized('Invalid credentials'));
+
+    await user.updateOne({ last_access: moment().toDate() });
 
     res.send({
       first_name: user.first_name,
