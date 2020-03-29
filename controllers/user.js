@@ -42,6 +42,25 @@ exports.create = async (req, res, next) => {
     }
 };
 
+exports.genericFind = async (req, res, next) => {
+    try {
+        const { email, status, type } = req.query;
+        const filter = {"email": email, 
+                        "status": status,
+                        "type": type
+                       };
+        const users = await  User.find(filter);
+
+        if(!users){
+            throw new NotFound('User not found')
+        }
+
+        res.send(users);
+    } catch (error) {
+        next(error);
+    }
+};
+
 exports.findAllOrganizations = async (req, res, next) => {
     try {
 

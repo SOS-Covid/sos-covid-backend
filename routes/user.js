@@ -11,6 +11,8 @@ router.post('/register', schemaValidator(createUserSchema), controller.create);
 router.get('/find/organization', controller.findOrganizations);
 router.get('/find/organization/all', controller.findAllOrganizations);
 
+router.get('/find', controller.genericFind);
+
 router.get('/find/market', controller.findMarkets);
 
 router.get('/find/contributor', controller.findContributors);
