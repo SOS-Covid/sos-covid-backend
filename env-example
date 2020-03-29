@@ -8,5 +8,6 @@ MAIL_HOST=email.com
 MAIL_PORT=465
 MAIL_USER=user@email.com
 MAIL_PASS=123
+MAIL_SERVICE=
 
 DB_MONGODB_URL=mongodb://lianrolim:kq2bds@ds239703.mlab.com:39703/trincadb
