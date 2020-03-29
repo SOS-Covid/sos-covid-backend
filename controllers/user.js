@@ -13,7 +13,7 @@ const FILTER_ORGANIZATION = {'type': 'ORGANIZATION'};
 const FILTER_MARKET = {'type': 'MARKET'};
 const FILTER_CONTRIBUTOR = {'type': 'CONTRIBUTOR'};
 
-exports.create = (req, res) => {
+exports.create = (req, res, next) => {
     const { body } = req;
     const newUser = transform(body);
     
@@ -24,7 +24,7 @@ exports.create = (req, res) => {
     });
 };
 
-exports.findOrganizations = async (req, res) => {
+exports.findOrganizations = async (req, res, next) => {
     try {
         const { skip, limit } = aqp(req.query);
         
@@ -50,7 +50,7 @@ exports.findOrganizations = async (req, res) => {
     }
 };
 
-exports.findMarkets = async (req, res) => {
+exports.findMarkets = async (req, res, next) => {
     try {
         const { skip, limit } = aqp(req.query);
         
@@ -77,7 +77,7 @@ exports.findMarkets = async (req, res) => {
 };
 
 
-exports.findContributors = async (req, res) => {
+exports.findContributors = async (req, res, next) => {
     try {
         const { skip, limit } = aqp(req.query);
         
@@ -103,7 +103,7 @@ exports.findContributors = async (req, res) => {
     }
 };
 
-exports.getById = async (req, res) => {
+exports.getById = async (req, res, next) => {
     try {
         const filter = {"name": req.params.name};
         const user = await  User.findOne(filter);
@@ -117,7 +117,7 @@ exports.getById = async (req, res) => {
     }
 };
 
-exports.getAll = async (req, res) => {
+exports.getAll = async (req, res, next) => {
     try {
         const users = await User.find({});
 

@@ -95,7 +95,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"email\": \"fernando@hotmail.com\",\n\t\"password\": \"meupassforte\",\n\t\"cpf_cnpj\": \"028887663612\",\n\t\"phone1\": \"51 991517810\",\n\t\"type\": \"CONTRIBUTOR\",\n\t\"first_name\": \"Fernando\",\n\t\"last_name\": \"Da Silva\"\n}",
+					"raw": "{\n\t\"email\": \"novo@hotmail.com\",\n\t\"password\": \"meupassforte\",\n\t\"cpf_cnpj\": \"028887663612\",\n\t\"phone1\": \"51 991517810\",\n\t\"type\": \"CONTRIBUTOR\",\n\t\"first_name\": \"Fernando\",\n\t\"last_name\": \"Da Silva\",\n\t\"status\": \"ACTIVE\",\n\t\"registred_at\": \"2020-03-28T23:55:09.483Z\",\n\t\"last_access\": \"2020-03-28T23:55:09.483Z\",\n\t\"address\": {\n\t\t\"street\": \"Av. Brasil\",\n\t\t\"number\": 123,\n\t\t\"complement\": \"Sala 1\",\n\t\t\"district\": \"Centro\",\n\t\t\"city\": \"Porto Alegre\",\n\t\t\"state\": \"RS\",\n\t\t\"country\": \"Brasil\",\n\t\t\"postal_code\": \"90520000\"\n\t}\n}",
 					"options": {
 						"raw": {
 							"language": "json"
