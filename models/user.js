@@ -34,6 +34,7 @@ const User = new Schema({
     status: {type: String, required: false},
     registred_at: {type: Date, default: Date.now},
     last_access: {type: Date, default: Date.now},
+    goal: {type: Number, required: false},
     address: {
         street: {type: String, required: false},
         number: {type: Number, required: false},
@@ -53,7 +54,8 @@ const User = new Schema({
         cpf_cnpj: {type: String, required: false}
     },
     help_types: [],
-    served_region: []
+    served_region: [],
+    assisted_entities: []
 });
 
 User.pre('updateOne', function(done) {

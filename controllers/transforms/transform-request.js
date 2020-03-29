@@ -45,6 +45,7 @@ module.exports = (body) => {
         cpf_cnpj: _.get(body, 'account_bank.name_favored', undefined)
     },
     help_types: _.get(body, 'help_types', undefined),
-    served_region: _.get(body, 'served_region', undefined)
+    served_region: _.get(body, 'served_region', undefined),
+    assisted_entities: _.get(body, 'assisted_entities', undefined)
   });
 };
