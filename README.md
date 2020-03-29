@@ -83,6 +83,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
   <tr>
 </table>
 
+
 <table>
   <tr>
     <td align="center"><a href="https://github.com/dennerevaldt"><img src="https://avatars1.githubusercontent.com/u/9368927?s=400&u=e6cfa7087569371ca594d57ff3a981aa6749996e&v=4" width="100px;" alt=""/><br /><sub><b>Denner Evaldt</b></sub></a><br /><a href="https://github.com/SOS-Covid/sos-covid-backend/commits?author=LianRolim" title="Code">💻</a></a></td>
