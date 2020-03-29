@@ -27,16 +27,8 @@ module.exports = (body) => {
     registred_at: _.get(body, 'registred_at', undefined),
     last_access: _.get(body, 'last_access', undefined),
     group_finality: _.get(body, 'group_finality', undefined),
-    address: {
-        street: _.get(body, 'address.street', undefined),
-        number: _.get(body, 'address.number', undefined),
-        complement: _.get(body, 'address.complement', undefined),
-        district: _.get(body, 'address.district', undefined),
-        city: _.get(body, 'address.city', undefined),
-        state: _.get(body, 'address.state', undefined),
-        country: _.get(body, 'address.country', undefined),
-        postal_code: _.get(body, 'address.postal_code', undefined)
-    },
+    goal: _.get(body, 'goal', undefined),
+    address: _.get(body, 'address', undefined),
     account_bank: {
         name_banking: _.get(body, 'account_bank.name_banking', undefined),
         agency: _.get(body, 'account_bank.agency', undefined),

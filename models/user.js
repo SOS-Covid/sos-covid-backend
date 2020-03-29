@@ -35,16 +35,7 @@ const User = new Schema({
     registred_at: {type: Date, default: Date.now},
     last_access: {type: Date, default: Date.now},
     goal: {type: Number, required: false},
-    address: {
-        street: {type: String, required: false},
-        number: {type: Number, required: false},
-        complement: {type: String, required: false},
-        district: {type: String, required: false},
-        city: {type: String, required: false},
-        state: {type: String, required: false},
-        country: {type: String, required: false},
-        postal_code: {type: String, required: false}
-    },
+    address: [],
     account_bank: {
         name_banking: {type: String, required: false},
         agency: {type: Number, required: false},
