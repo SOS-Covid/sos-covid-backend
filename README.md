@@ -1,6 +1,6 @@
-<p align="center">
-  [![Actions Status](https://github.com/SOS-Covid/sos-covid-backend/workflows/SOS%20Covid%20Backend/badge.svg)](https://github.com/SOS-Covid/sos-covid-backend/actions)
-</p>
+[![Actions Status](https://github.com/SOS-Covid/sos-covid-backend/workflows/SOS%20Covid%20Backend/badge.svg)](https://github.com/SOS-Covid/sos-covid-backend/actions)
+
+<br />
 <h1 align="center">SOS-COVID-BACKEND</h1>
 <p align="center">
   <strong>Backend do projeto que visa ajudar as familias e estabelecimentos impactados pelo COVID19</strong>
