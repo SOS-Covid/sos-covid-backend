@@ -51,10 +51,8 @@ exports.genericFind = async (req, res, next) => {
                        };
         const users = await  User.find(filter);
 
-        if(!users){
-            throw new NotFound('User not found')
-        }
-
+        if(users.length === 0) throw new NotFound('User not found');
+        
         res.send(users);
     } catch (error) {
         next(error);
