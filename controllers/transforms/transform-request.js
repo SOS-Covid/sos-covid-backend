@@ -3,6 +3,7 @@ const Bcrypt = require("bcryptjs");
 const User = require('../../models/user');
 
 module.exports = (body) => {
+  
   body.password = Bcrypt.hashSync(body.password, 10);
 
   return new User({
