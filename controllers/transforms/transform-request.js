@@ -30,6 +30,8 @@ module.exports = (body) => {
     group_finality: _.get(body, 'group_finality', undefined),
     goal: _.get(body, 'goal', undefined),
     address: _.get(body, 'address', undefined),
+    description:_.get(body, 'description', undefined),
+    payment_methods: _.get(body, 'payment_methods', undefined),
     account_bank: {
         name_banking: _.get(body, 'account_bank.name_banking', undefined),
         agency: _.get(body, 'account_bank.agency', undefined),
