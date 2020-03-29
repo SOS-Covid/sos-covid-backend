@@ -13,15 +13,30 @@ const FILTER_ORGANIZATION = {'type': 'ORGANIZATION'};
 const FILTER_MARKET = {'type': 'MARKET'};
 const FILTER_CONTRIBUTOR = {'type': 'CONTRIBUTOR'};
 
-exports.create = (req, res, next) => {
-    const { body } = req;
-    const newUser = transform(body);
-    
-    newUser.save((err) => {
-        if (err) return next(err);
-        body.password = undefined;
+exports.create = async (req, res, next) => {
+    try {
+        const { body } = req;
+        const newUser = transform(body);
+
+        const user = await newUser.save();
+        const userName = `${user.first_name} ${user.last_name}`.trim();
+
+        await mailIntegration.sendMail({
+            to: `${userName} <${user.email}>`,
+            subject: 'Confirmação de cadastro',
+            template: 'confirm-member',
+            context: {
+              name: userName,
+              link: `${config.app.host}/user/active/${user.email}`
+            },
+        });
+
+        delete body.password;
+
         res.send(body);
-    });
+    } catch (error) {
+        next(error);
+    }
 };
 
 exports.findOrganizations = async (req, res, next) => {
@@ -178,7 +193,7 @@ exports.validRecovery = async (req, res, next) => {
         const expiresInTemp = moment().add('15', 'minutes').valueOf();
         const tempJwt = user.generateJwt(expiresInTemp);
 
-        const linkToRedirect = `${config.app.frontHostPasswordRecovery}/${tempJwt}`;
+        const linkToRedirect = `${config.app.frontHost}/update-password/${tempJwt}`;
 
         res.status(HttpStatus.PERMANENT_REDIRECT).redirect(linkToRedirect);
     } catch (error) {
@@ -199,6 +214,24 @@ exports.updatePassword = async (req, res, next) => {
         await user.updateOne({ password: newPassword });
 
         res.sendStatus(HttpStatus.NO_CONTENT);
+    } catch (error) {
+        next(error);
+    }
+};
+
+exports.activate = async (req, res, next) => {
+    try {
+        const { email } = req.params;
+
+        const user = await User.findOne({ email, status: false });
+
+        if (!user) return next(new NotFound('User not found'));
+
+        await user.updateOne({ status: true });
+
+        const linkToRedirect = `${config.app.frontHost}/user/activated`;
+        
+        res.status(HttpStatus.PERMANENT_REDIRECT).redirect(linkToRedirect);
     } catch (error) {
         next(error);
     }

@@ -11,5 +11,6 @@ router.get('/find/contributor', extractJwt, controller.findContributors);
 router.get('/password-recovery/:email', controller.recoveryPassword);
 router.get('/valid-recovery/:code', controller.validRecovery);
 router.patch('/password', extractJwt, controller.updatePassword);
+router.get('/active/:email', controller.activate);
 
 module.exports = router;

@@ -31,7 +31,7 @@ const User = new Schema({
     value: {type: Number, required: false},
     delivery: {type: Boolean, required: false},
     group_finality: {type: String, required: false},
-    status: {type: String, required: false},
+    status: {type: Boolean, required: true, default: false},
     registred_at: {type: Date, default: Date.now},
     last_access: {type: Date, default: Date.now},
     goal: {type: Number, required: false},
@@ -59,7 +59,7 @@ const User = new Schema({
 });
 
 User.pre('updateOne', function(done) {
-    this._update.password = bcrypt.hashSync(this._update.password, 10);
+    if (this._update.password) this._update.password = bcrypt.hashSync(this._update.password, 10);
     done();
 });
 
