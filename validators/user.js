@@ -23,6 +23,8 @@ const createUserSchema = joi.object({
   group_finality: joi.string().max(50),
   goal: joi.number().default(0),
   address: joi.array().items(joi.object()),
+  payment_methods: joi.array().items(joi.object()),
+  description: joi.string(),
   account_bank: joi.object({
     name_banking: joi.string().max(50),
     agency: joi.number(),

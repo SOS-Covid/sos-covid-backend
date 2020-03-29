@@ -36,6 +36,8 @@ const User = new Schema({
     last_access: {type: Date, default: Date.now},
     goal: {type: Number, required: false},
     address: [],
+    payment_methods: [],
+    description: [String],
     account_bank: {
         name_banking: {type: String, required: false},
         agency: {type: Number, required: false},
