@@ -2,7 +2,7 @@ NODE_ENV=dev
 HTTP_PORT=8080
 APP_HOST=http://localhost:8080
 JWT_SECRET=mySecretKey
-FRONT_HOST_PWD_RECOVERY=http://localhost:8081/update-password
+FRONT_HOST=http://localhost:8081
 
 MAIL_HOST=email.com
 MAIL_PORT=465

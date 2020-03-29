@@ -5,7 +5,7 @@ exports.create = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email, status: true });
     if (!user) return next(new NotFound('User not found'));
 
     const isMatch = user.comparePassword(password);
