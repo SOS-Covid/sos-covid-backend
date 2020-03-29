@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "13447803-a70e-43bf-8a0f-e11874f73944",
-		"name": "requests copy",
+		"_postman_id": "f750089e-70ba-4e1f-bb89-0e713e5d1626",
+		"name": "requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -117,60 +117,60 @@
 			"response": []
 		},
 		{
-			"name": "Consulta paginada de ONGS",
+			"name": "Recovery Password",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/user/find/organization?skip=0&limit=10",
+					"raw": "http://localhost:3000/user/password-recovery/fernando@hotmail.com",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "3000",
 					"path": [
 						"user",
-						"find",
-						"organization"
-					],
-					"query": [
-						{
-							"key": "skip",
-							"value": "0"
-						},
-						{
-							"key": "limit",
-							"value": "10"
-						}
+						"password-recovery",
+						"fernando@hotmail.com"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Consulta paginada de MERCADOS",
+			"name": "Update password",
 			"request": {
-				"method": "GET",
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvQGhvdG1haWwuY29tIiwiaWF0IjoxNTg1NDM0ODY4LCJleHAiOjE1ODcwMjEyMDM0MTF9.RSKCwuLtQyZurv_EPMQGN_lUEHuqxTh9QbRG8ZEdUwA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"oldPassword\": \"12345678\",\n\t\"newPassword\": \"meupassforte\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/user/find/market?skip=0&limit=10",
+					"raw": "http://localhost:3000/user/password",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "3000",
 					"path": [
 						"user",
-						"find",
-						"market"
-					],
-					"query": [
-						{
-							"key": "skip",
-							"value": "0"
-						},
-						{
-							"key": "limit",
-							"value": "10"
-						}
+						"password"
 					]
 				}
 			},
