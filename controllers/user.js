@@ -22,15 +22,17 @@ exports.create = async (req, res, next) => {
         const user = await newUser.save();
         const userName = `${user.first_name} ${user.last_name}`.trim();
 
-        await mailIntegration.sendMail({
-            to: `${userName} <${user.email}>`,
-            subject: 'Confirmação de cadastro',
-            template: 'confirm-member',
-            context: {
-              name: userName,
-              link: `${config.app.host}/user/active/${user.email}`
-            },
-        });
+        if (config.mail.active) {
+            await mailIntegration.sendMail({
+                to: `${userName} <${user.email}>`,
+                subject: 'Confirmação de cadastro',
+                template: 'confirm-member',
+                context: {
+                  name: userName,
+                  link: `${config.app.host}/user/active/${user.email}`
+                },
+            });
+        }
 
         delete body.password;
 

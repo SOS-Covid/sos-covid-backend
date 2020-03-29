@@ -22,7 +22,7 @@ const createUserSchema = joi.object({
   delivery: joi.boolean().default(false),
   group_finality: joi.string().max(50),
   goal: joi.number().default(0),
-  address: joi.array().items(joi.string()),
+  address: joi.array().items(joi.object()),
   account_bank: joi.object({
     name_banking: joi.string().max(50),
     agency: joi.number(),
@@ -33,7 +33,7 @@ const createUserSchema = joi.object({
   }),
   help_types: joi.array().items(joi.string()),
   served_region: joi.array().items(joi.string()),
-  assisted_entities: joi.array().items(joi.string()),
+  assisted_entities: joi.array().items(joi.object()),
 });
 
 const updatePasswordSchema = joi.object({
