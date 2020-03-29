@@ -6,12 +6,23 @@ const nodemailerhbs = require("nodemailer-express-handlebars");
 const { mail } = require("../../config");
 
 const createTransport = () => {
-  const transporter = nodemailer.createTransport({
-    host: mail.host,
-    port: mail.port,
-    secure: mail.secure,
-    auth: mail.auth.user ? mail.auth : null
-  });
+  let transportOptions;
+
+  if (mail.service) {
+    transportOptions = {
+      service: mail.service,
+      auth: mail.auth,
+    };
+  } else {
+    transportOptions = {
+      host: mail.host,
+      port: mail.port,
+      secure: mail.secure,
+      auth: mail.auth.user ? mail.auth : null
+    };
+  }
+
+  const transporter = nodemailer.createTransport(transportOptions);
 
   const viewPath = resolve(__dirname, "views");
 
