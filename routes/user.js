@@ -7,9 +7,14 @@ const controller = require('../controllers/user');
 const extractJwt = require('../middlewares/extract-jwt');
 
 router.post('/register', schemaValidator(createUserSchema), controller.create);
+
 router.get('/find/organization', controller.findOrganizations);
+router.get('/find/organization/all', controller.findAllOrganizations);
+
 router.get('/find/market', controller.findMarkets);
+
 router.get('/find/contributor', controller.findContributors);
+
 router.get('/password-recovery/:email', controller.recoveryPassword);
 router.get('/valid-recovery/:code', controller.validRecovery);
 router.patch('/password', extractJwt, schemaValidator(updatePasswordSchema), controller.updatePassword);

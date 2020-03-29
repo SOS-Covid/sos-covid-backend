@@ -42,6 +42,21 @@ exports.create = async (req, res, next) => {
     }
 };
 
+exports.findAllOrganizations = async (req, res, next) => {
+    try {
+
+        const filter = {"type": userAccountType.ORGANIZATION};
+        const users = await  User.find(filter);
+
+        if(!users){
+            return next(users);
+        }
+        res.send(users);
+    } catch (error) {
+        next(error);
+    }
+};
+
 exports.findOrganizations = async (req, res, next) => {
     try {
         const { skip, limit } = aqp(req.query);
@@ -130,19 +145,6 @@ exports.getById = async (req, res, next) => {
             return next(err);
         }
         res.send(user);
-    } catch (error) {
-        next(error);
-    }
-};
-
-exports.getAll = async (req, res, next) => {
-    try {
-        const users = await User.find({});
-
-        if(!users){
-            return next(users);
-        }
-        res.send(users);
     } catch (error) {
         next(error);
     }
