@@ -13,7 +13,7 @@ const Campaign = new Schema({
     served_region: [],
     initial_date: {type: Date, required: true},
     final_date: {type: Date, required: true},
-    donate_types: [],
+    donate_channels: [],
     status: {type: String, required: true}
 });
 

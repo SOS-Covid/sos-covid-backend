@@ -13,7 +13,7 @@ module.exports = (body) => {
     served_region: body.served_region,
     initial_date: body.initial_date,
     final_date: body.final_date,
-    donate_types: body.donate_types,
+    donate_channels: body.donate_channels,
     status: body.status
   });
 };
