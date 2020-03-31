@@ -4,7 +4,7 @@ const { status } = require('../enums/status');
 
 const createCampaignSchema = joi.object({
   campaign_name:  joi.string().required(),
-  reference_user: joi.string().required(),
+  reference_user: joi.string().email().required(),
   description: joi.string().required(),
   assisted_entity: joi.string().required(),
   type_donations: joi.array(),

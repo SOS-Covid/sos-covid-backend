@@ -1,6 +1,7 @@
 const aqp = require('api-query-params');
 const HttpStatus = require('http-status-codes');
 
+const User = require('../models/user');
 const Campaign = require('../models/campaign');
 const transform = require('./transforms/transform-request-campaign');
 const { NotFound } = require('../errors');
@@ -8,6 +9,11 @@ const { NotFound } = require('../errors');
 exports.create = async (req, res, next) => {
     try {
         const { body } = req;
+        const filter = {"email": body.reference_user};
+        const user = await  User.find(filter);
+        
+        if(user.length === 0) throw new NotFound('User not found');
+
         const newCampaign = transform(body);
 
         await newCampaign.save();
