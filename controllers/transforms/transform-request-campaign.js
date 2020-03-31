@@ -1,7 +1,6 @@
 const Campaign = require('../../models/campaign');
 
 module.exports = (body) => {
-
   return new Campaign({
     campaign_name: body.campaign_name,
     reference_user: body.reference_user,
