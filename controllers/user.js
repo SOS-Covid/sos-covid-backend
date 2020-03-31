@@ -4,7 +4,7 @@ const aqp = require('api-query-params');
 
 const User = require('../models/user');
 const PasswordRecovery = require('../models/password-recovery');
-const transform = require('./transforms/transform-request');
+const transform = require('./transforms/transform-request-user');
 const config = require('../config');
 const mailIntegration = require('../integrations/email');
 
