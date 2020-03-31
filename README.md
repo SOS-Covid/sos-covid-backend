@@ -6,7 +6,7 @@
   <strong>Backend do projeto que visa ajudar as familias e estabelecimentos impactados pelo COVID19</strong>
 </p>
 
-**Chat: _[WhatsApp](https://chat.whatsapp.com/LB9ezej6xGr2NVRbHJm9Uv), [Discord](https://discord.gg/UW9RFs_**
+**Chat: _[WhatsApp](https://chat.whatsapp.com/LB9ezej6xGr2NVRbHJm9Uv), [Discord](https://discord.gg/UW9RFs_)**
 
 ## O Projeto Cooperação Solidária :bulb:
 
