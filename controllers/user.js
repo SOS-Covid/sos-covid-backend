@@ -42,6 +42,18 @@ exports.create = async (req, res, next) => {
     }
 };
 
+exports.remove = async (req, res, next) => {
+    try {
+        const { email } = req.params;
+        const filter = {"email": email};
+        await  User.findOneAndDelete(filter);
+        
+        res.sendStatus(HttpStatus.NO_CONTENT);
+    } catch (error) {
+        next(error);
+    }
+};
+
 exports.genericFind = async (req, res, next) => {
     try {
         const { email, status, type } = req.query;

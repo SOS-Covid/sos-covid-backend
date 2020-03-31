@@ -1,4 +1,5 @@
 const aqp = require('api-query-params');
+const HttpStatus = require('http-status-codes');
 
 const Campaign = require('../models/campaign');
 const transform = require('./transforms/transform-request-campaign');
@@ -12,6 +13,18 @@ exports.create = async (req, res, next) => {
         await newCampaign.save();
 
         res.send(body);
+    } catch (error) {
+        next(error);
+    }
+};
+
+exports.remove = async (req, res, next) => {
+    try {
+        const { email } = req.params;
+        const filter = {"email": email};
+        await  Campaign.findOneAndDelete(filter);
+        
+        res.sendStatus(HttpStatus.NO_CONTENT);
     } catch (error) {
         next(error);
     }
