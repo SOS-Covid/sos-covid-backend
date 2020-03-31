@@ -13,7 +13,7 @@ const createCampaignSchema = joi.object({
   served_region: joi.array(),
   initial_date: joi.date().required(),
   final_date: joi.date().required(),
-  donate_types: joi.array(),
+  donate_channels: joi.array(),
   status: joi.string().required().valid(...Object.values(status)),
 });
 
