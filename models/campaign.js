@@ -3,7 +3,12 @@ const Schema = mongoose.Schema;
 
 const Campaign = new Schema({
     campaign_name:  {type: String, required: true},
-    reference_user: {type: String, required: true},
+    reference_user: { type: String, 
+        required: true, 
+        max: 100, 
+        index: { unique: true },
+        match: [/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Please fill valid email address'],
+    },
     description: {type: String, required: true},
     assisted_entity: {type: String, required: true},
     type_donations: [],
