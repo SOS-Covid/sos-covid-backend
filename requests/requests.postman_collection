@@ -308,6 +308,46 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "REMOVE USUARIO BY EMAIL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/remove/joao@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"remove",
+						"joao@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REMOVE CAMPAIGN",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/campaign/remove/joao@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"campaign",
+						"remove",
+						"joao@gmail.com"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
