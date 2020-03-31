@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "13447803-a70e-43bf-8a0f-e11874f73944",
+		"name": "requests copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE ONG/ORGANIZATION",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"novoa@gmail.com\",\r\n\t\"password\": \"meupass\",\r\n\t\"first_name\": \"sou\",\r\n\t\"last_name\": \"o responsavel\",\r\n\t\"name_organization\": \"Mensageiros da caridade\",\r\n\t\"cpf_cnpj\": \"028887663612\",\r\n\t\"phone1\": \"51 991517810\",\r\n\t\"type\": \"ORGANIZATION\",\r\n\t\"site\": \"https://mensageirosdacaridade.com\",\r\n\t\"facebook\": \"instagram.com/mensageiros\",\r\n\t\"instagram\": \"facebook.com/mensageiros\",\r\n\t\"group_finality\": \"Ação social\",\r\n\t\"accepted_donate\": true,\r\n\t\"goal\": 50,\r\n\t\"address\": [\r\n\t\t{\r\n\t\t\t\"street\": \"Av. Brasil\",\r\n\t\t\t\"number\": 123,\r\n\t\t\t\"complement\": \"Sala 1\",\r\n\t\t\t\"district\": \"Centro\",\r\n\t\t\t\"city\": \"Porto Alegre\",\r\n\t\t\t\"state\": \"RS\",\r\n\t\t\t\"country\": \"Brasil\",\r\n\t\t\t\"postal_code\": \"90520000\"\r\n\t\t}\r\n\t],\r\n\t\"account_bank\": {\r\n\t\t\"name_banking\": \"ITAU\",\r\n\t\t\"agency\": \"0434\",\r\n\t\t\"account_number\": \"559141\",\r\n\t\t\"name_favored\": \"Ong Mensageiros\",\r\n\t\t\"cpf_cnpj\": \"028887663612\"\r\n\t},\r\n\t\"help_types\": [\r\n\t\t\"Transferência bancária\",\r\n\t\t\"Doação direta de alimentos\",\r\n\t\t\"Doação de roupas\"\r\n\t],\r\n\t\"served_region\": [\r\n\t\t\"Zona Sul\",\r\n\t\t\"Zona Norte\",\r\n\t\t\"Restinga\"\r\n\t],\r\n\t\"assisted_entities\": [\r\n\t\t{\r\n\t\t\t\"name\": \"Fernando da silva\",\r\n\t\t\t\"street\": \"Av. Brasil\",\r\n\t\t\t\"number\": 123,\r\n\t\t\t\"complement\": \"Sala 1\",\r\n\t\t\t\"district\": \"Centro\",\r\n\t\t\t\"city\": \"Porto Alegre\",\r\n\t\t\t\"state\": \"RS\",\r\n\t\t\t\"country\": \"Brasil\",\r\n\t\t\t\"postal_code\": \"90520000\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"João Manoel\",\r\n\t\t\t\"street\": \"Restinga\",\r\n\t\t\t\"number\": 123,\r\n\t\t\t\"complement\": \"Sala 1\",\r\n\t\t\t\"district\": \"Centro\",\r\n\t\t\t\"city\": \"Porto Alegre\",\r\n\t\t\t\"state\": \"RS\",\r\n\t\t\t\"country\": \"Brasil\",\r\n\t\t\t\"postal_code\": \"90520000\"\r\n\t\t}\r\n\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"fernando@hotmail.com\",\n\t\"password\": \"meupassforte\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/session",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create market",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"social_reason\": \"SUPERMAGO IND DE ALIMENTOS DO BRASIL\",\n\t\"name_market\": \"SUPERMAGO\",\n\t\"email\": \"supermago@gmail.com\",\n\t\"password\": \"meupassforte\",\n\t\"cpf_cnpj\": \"028887663612\",\n\t\"phone1\": \"51 991517810\",\n\t\"type\": \"MARKET\",\n\t\"first_name\": \"sou eu\",\n\t\"last_name\": \" o responsavel\",\n\t\"cpf_responsible\": \"8456782190\",\n\t\"delivery\": true,\n\t\"value\": 500,\n\t\"status\": \"ACTIVE\",\n\t\"registred_at\": \"2020-03-28T23:55:09.483Z\",\n\t\"last_access\": \"2020-03-28T23:55:09.483Z\",\n\t\"address\": {\n\t    \"street\": \"Praça dos açorianos\",\n\t\t\"number\": 555,\n\t\t\"complement\": \"Sala 1\",\n\t\t\"district\": \"Centro\",\n\t\t\"city\": \"Porto Alegre\",\n\t\t\"state\": \"RS\",\n\t\t\"country\": \"Brasil\",\n\t\t\"postal_code\": \"90520000\"\n\t},\n\t\"account_bank\": {\n\t\t\"name_banking\": \"ITAU\",\n\t\t\"agency\": \"0434\",\n\t\t\"account_number\": \"559141\",\n\t\t\"name_favored\": \"SUPERMAGO\",\n\t\t\"cpf_cnpj\": \"028887663612\"\n\t},\n\t\"help_types\": [\n        \"Arroz\",\n        \"Feijão\",\n        \"Oleo\",\n        \"Sal\", \n        \"Açucar\",\n        \"Café\",\n        \"Macarrão\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CADASTRO DOADOR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"novo@hotmail.com\",\n\t\"password\": \"meupassforte\",\n\t\"cpf_cnpj\": \"028887663612\",\n\t\"phone1\": \"51 991517810\",\n\t\"type\": \"CONTRIBUTOR\",\n\t\"first_name\": \"Fernando\",\n\t\"last_name\": \"Da Silva\",\n\t\"status\": \"ACTIVE\",\n\t\"registred_at\": \"2020-03-28T23:55:09.483Z\",\n\t\"last_access\": \"2020-03-28T23:55:09.483Z\",\n\t\"address\": [\n\t\t{\n\t\t\t\"street\": \"Av. Brasil\",\n\t\t\t\"number\": 123,\n\t\t\t\"complement\": \"Sala 1\",\n\t\t\t\"district\": \"Centro\",\n\t\t\t\"city\": \"Porto Alegre\",\n\t\t\t\"state\": \"RS\",\n\t\t\t\"country\": \"Brasil\",\n\t\t\t\"postal_code\": \"90520000\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta paginada de ONGS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/find/organization?skip=0&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"find",
+						"organization"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta paginada de MERCADOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/find/market?skip=0&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"find",
+						"market"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all contribuidores registrados na plataforma",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/find/contributor?skip=0&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"find",
+						"contributor"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE NEW CAMPAIGN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"campaign_name\":  \"Minha campanha super legal\",\n\t\"reference_user\": \"lianrolim@gmail.com\",\n\t\"description\": \"Essa é a campanha mais legal que você vai ver hoje aqui\",\n\t\"assisted_entity\": \"MEDICOS\",\n\t\"type_donations\": [\n\t\t\"RESPIRADORES\",\n\t\t\"ALCOOL GEL\",\n\t\t\"MASCARA\"\n\t],\n\t\"state\": \"RIO GRANDE DO SUL\",\n\t\"city\": \"PORTO ALEGRE\",\n\t\"served_region\": [\n\t\t\"ZONA SUL\",\n\t\t\"ZONA LESTE\"\n\t],\n\t\"initial_date\": \"2020-03-29T19:53:28.033Z\",\n\t\"final_date\": \"2020-04-29T19:53:28.033Z\",\n\t\"donate_types\": [\n\t\t\"pagar.me/UIXOA!\",\n\t\t\"pag.me/UEAUHE\",\n\t\t\"TRANSFERÊNCIA BANCÁRIA\"\n\t],\n\t\"status\": \"ACTIVE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/campaign/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"campaign",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND ALL CAMPAIGNS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/campaign/find/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"campaign",
+						"find",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND CAMPAIGNS PAGINATED",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/campaign/find?skip=0&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"campaign",
+						"find"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FIND CAMPAIGNS BY EMAIL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/campaign/find/lianrolim@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"campaign",
+						"find",
+						"lianrolim@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

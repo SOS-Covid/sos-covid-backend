@@ -6,6 +6,7 @@ const config = require('./config');
 
 const user = require('./routes/user');
 const donate = require('./routes/donation');
+const campaign = require('./routes/campaign');
 const session = require('./routes/session');
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/user', user);
 app.use('/donate', donate);
+app.use('/campaign', campaign);
 app.use('/session', session);
 
 app.use((req, res, next) => {
