@@ -6,7 +6,6 @@ const Campaign = new Schema({
     reference_user: { type: String, 
         required: true, 
         max: 100, 
-        index: { unique: true },
         match: [/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Please fill valid email address'],
     },
     description: {type: String, required: true},
