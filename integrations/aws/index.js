@@ -3,7 +3,14 @@ const config = require('../../config');
 
 const { key, secret, region, bucket_name } = config.aws;
 
-exports.imageUpload = async (imgBase64) => {
+const generateUniqueKey = () => {
+  var timestamp = (new Date()).getTime();
+  var randomInteger = Math.floor((Math.random() * 1000000) + 1);
+
+  return timestamp + '_' + randomInteger + '.png';
+};
+
+exports.imageUpload = async (imgBase64, email) => {
   AWS.config.setPromisesDependency(require('bluebird'));
   AWS.config.update({ accessKeyId: key, 
     secretAccessKey: secret, region: region });
@@ -14,7 +21,7 @@ exports.imageUpload = async (imgBase64) => {
 
   const params = {
     Bucket: bucket_name,
-    Key: 'lianrolim',
+    Key: generateUniqueKey(),
     Body: buffer,
     ACL: 'public-read',
     ContentEncoding: 'base64',

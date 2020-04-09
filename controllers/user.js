@@ -21,7 +21,7 @@ exports.create = async (req, res, next) => {
         const { body } = req;
 
         if (_.get(body, 'image', undefined)) {
-            body.image = await imageUpload(body.image);
+            body.image = await imageUpload(body.image, body.email);
         } else {
             body.image = config.image.default;
         }
