@@ -33,5 +33,14 @@ module.exports = {
     default: {
       from: "Equipe SOS Covid <noreply@soscovid.com>"
     }
+  },
+  aws: {
+    key: process.env.ACCESS_KEY_ID,
+    secret: process.env.SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION,
+    bucket_name: process.env.S3_BUCKET
+  },
+  image: {
+    default: process.env.DEFAULT_IMAGE,
   }
 };

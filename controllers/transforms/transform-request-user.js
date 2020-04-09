@@ -7,7 +7,8 @@ module.exports = (body) => {
   body.password = Bcrypt.hashSync(body.password, 10);
 
   return new User({
-    email: body.email, 
+    email: body.email,
+    image: body.image,
     password: body.password,
     cpf_cnpj: body.cpf_cnpj,
     phone1: body.phone1,

@@ -4,6 +4,7 @@ const { userAccountType } = require('../enums/user');
 
 const createUserSchema = joi.object({
   email: joi.string().email().required(),
+  image: joi.string().optional(),
   password: joi.string().max(8).required(),
   cpf_cnpj: joi.string().max(16).required(),
   phone1: joi.string().max(20).required(),

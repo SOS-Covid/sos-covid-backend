@@ -1,12 +1,14 @@
 const HttpStatus = require('http-status-codes');
 const moment = require('moment');
 const aqp = require('api-query-params');
+const _ = require('lodash');
 
 const User = require('../models/user');
 const PasswordRecovery = require('../models/password-recovery');
 const transform = require('./transforms/transform-request-user');
 const config = require('../config');
 const mailIntegration = require('../integrations/email');
+const { imageUpload } = require('../integrations/aws');
 
 const { NotFound, InternalServerError } = require('../errors');
 const { userAccountType } = require('../enums/user');
@@ -17,6 +19,13 @@ const FILTER_CONTRIBUTOR = {'type': userAccountType.CONTRIBUTOR };
 exports.create = async (req, res, next) => {
     try {
         const { body } = req;
+
+        if (_.get(body, 'image', undefined)) {
+            body.image = await imageUpload(body.image);
+        } else {
+            body.image = config.image.default;
+        }
+
         const newUser = transform(body);
 
         const user = await newUser.save();
