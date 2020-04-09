@@ -10,7 +10,7 @@ const generateUniqueKey = () => {
   return timestamp + '_' + randomInteger + '.png';
 };
 
-exports.imageUpload = async (imgBase64, email) => {
+exports.imageUpload = async (imgBase64) => {
   AWS.config.setPromisesDependency(require('bluebird'));
   AWS.config.update({ accessKeyId: key, 
     secretAccessKey: secret, region: region });
