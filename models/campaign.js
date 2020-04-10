@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 const Campaign = new Schema({
     campaign_name:  {type: String, required: true},
     reference_user: { type: String, 
-        required: true, 
-        max: 100, 
+        required: true,
         match: [/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'Please fill valid email address'],
     },
     description: {type: String, required: true},
@@ -17,7 +16,9 @@ const Campaign = new Schema({
     initial_date: {type: Date, required: true},
     final_date: {type: Date, required: true},
     donate_channels: [],
-    status: {type: String, required: true}
+    status: {type: String, required: true},
+    collect: {type: Boolean, required: false},
+    collect_spot: {type: String, required: false}
 });
 
 module.exports = mongoose.model('Campaign', Campaign);

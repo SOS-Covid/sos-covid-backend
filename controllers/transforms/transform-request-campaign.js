@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const Campaign = require('../../models/campaign');
 
 module.exports = (body) => {
@@ -13,6 +15,8 @@ module.exports = (body) => {
     initial_date: body.initial_date,
     final_date: body.final_date,
     donate_channels: body.donate_channels,
-    status: body.status
+    status: body.status,
+    collect: _.get(body, 'collect', false),
+    collect_spot: _.get(body, 'collect_spot', undefined)
   });
 };

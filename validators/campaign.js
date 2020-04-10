@@ -15,6 +15,8 @@ const createCampaignSchema = joi.object({
   final_date: joi.date().required(),
   donate_channels: joi.array(),
   status: joi.string().required().valid(...Object.values(status)),
+  collect: joi.boolean().optional(),
+  collect_spot: joi.string().optional(),
 });
 
 module.exports = {
