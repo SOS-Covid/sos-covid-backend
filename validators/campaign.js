@@ -19,6 +19,7 @@ const createCampaignSchema = joi.object({
   collect_spot: joi.string().optional(),
 });
 
+
 module.exports = {
   createCampaignSchema,
 };
