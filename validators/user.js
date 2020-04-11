@@ -2,6 +2,7 @@ const joi = require('joi');
 
 const { userAccountType } = require('../enums/user');
 
+
 const createUserSchema = joi.object({
   email: joi.string().email().required(),
   image: joi.string().optional(),

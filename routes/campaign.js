@@ -13,7 +13,7 @@ const {
 } = require("../controllers/campaign");
 const extractJwt = require("../middlewares/extract-jwt");
 
-router.post("/create", extractJwt, schemaValidator(createCampaignSchema), create);
+router.post("/create", schemaValidator(createCampaignSchema), create);
 router.delete("/remove/:email", remove);
 router.get("/find/all", findAll);
 router.get("/find", findPerPage);
