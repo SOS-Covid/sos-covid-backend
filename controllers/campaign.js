@@ -27,7 +27,7 @@ exports.create = async (req, res, next) => {
 exports.remove = async (req, res, next) => {
   try {
     const { email } = req.params;
-    const filter = { email: email };
+    const filter = { reference_user: email };
     await Campaign.findOneAndDelete(filter);
 
     res.sendStatus(HttpStatus.NO_CONTENT);
