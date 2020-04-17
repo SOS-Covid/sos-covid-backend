@@ -23,7 +23,7 @@ module.exports = {
   mail: {
     host: process.env.MAIL_HOST,
     port: process.env.MAIL_PORT,
-    secure: false,
+    secure: true,
     active: process.env.MAIL_ACTIVE,
     auth: {
       user: process.env.MAIL_USER,
@@ -31,7 +31,7 @@ module.exports = {
     },
     service: process.env.MAIL_SERVICE,
     default: {
-      from: "Equipe SOS Covid <noreply@soscovid.com>"
+      from: "Equipe Cooperação Solidária <coopsolidariacontato@gmail.com>"
     }
   },
   aws: {
