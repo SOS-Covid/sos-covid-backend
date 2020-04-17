@@ -31,7 +31,7 @@ module.exports = {
     },
     service: process.env.MAIL_SERVICE,
     default: {
-      from: "Equipe Cooperação Solidária <coopsolidariacontato@gmail.com>"
+      from: "<coopsolidariacontato@gmail.com>"
     }
   },
   aws: {
